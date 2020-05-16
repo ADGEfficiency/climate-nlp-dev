@@ -31,7 +31,7 @@ def get_newspaper_links(newspaper, num_results):
         start=1,
         stop=num_results,
         pause=2.0,
-        user_agent='adam'
+        user_agent='climatecode'
     )]
     return links
 
@@ -110,5 +110,7 @@ if __name__ == '__main__':
 
         import pprint
         pp = pprint.PrettyPrinter()
+        print('failed links')
+        print('---')
         pp.pprint(failed)
         print('{} links failed'.format(len(failed)))

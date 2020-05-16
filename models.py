@@ -23,8 +23,8 @@ def get_simple_sentence_polarity(sentence, polarity_dict):
 
 
 class AdamSimple:
-    def __init__(self, polarity_dict):
-        self.polarity_dict = polarity_dict
+    def __init__(self, lexica):
+        self.polarity_dict = lexica['polarity']
 
     # untested
     def analyse(self, text):
@@ -200,3 +200,26 @@ def dict_import(lang, other_mode = ""):
             return None
 
     return polarity_dict
+
+
+if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('text')
+    args = parser.parse_args()
+
+    lexica = {
+        'intensity': {'very': 1, 'reduced': -1},
+        'negation': ['no', 'not'],
+        'polarity': {'fire': -1, 'emissions': -1, 'bad': -1}
+    }
+
+    print(args)
+    model = AdamSimple(lexica)
+    res = model.analyse(args.text)
+    print(res)
+    print(sum([w.polarity for w in res]))
+
+    samples = [
+        'fire is not bad',
+    ]

@@ -112,7 +112,7 @@ def parse_newyorker(link):
                 article.extend([p.text for p in t.findAll('p')])
         else:
             import pdb; pdb.set_trace()
-            assert len(table) == 1
+            return {}
 
     article = [p.text for p in table[0].findAll('p')]
     article = ''.join(article)

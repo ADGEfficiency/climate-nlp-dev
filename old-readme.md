@@ -10,6 +10,9 @@
 
 - upbeat, hopeless, on the right path (hope, positive, optimistic)
 
+1. climate independent lexica
+2. climate specific (encoding the emotional repsonse of the authors)
+
 
 # climate-nlp-dev
 
